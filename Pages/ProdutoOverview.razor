@@ -1,0 +1,39 @@
+﻿@page "/produtos"
+
+<h1>Produtos</h1>
+
+@if(ProdutosList == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Valor</td>
+            <td>Ativo</td>
+            <td>Qtd Vendida</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prod in ProdutosList)
+        {
+            <tr>
+                <td>@prod.Id</td>
+                <td>@prod.Nome</td>
+                <td>@prod.Valor</td>
+                <td>@prod.Ativo</td>
+                <td>@prod.QuantidadeVendida</td>
+                <td>
+                    <a href="@($"produtodetail/{prod.Id}")" class="btn btn-success">Detail</a>
+                </td>
+            </tr>
+        }   
+        </tbody>
+    </table>
+}
+

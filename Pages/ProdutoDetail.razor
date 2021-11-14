@@ -1,0 +1,51 @@
+﻿@page "/produtodetail/{Id}"
+
+<h1>Detalhes do Produto @Produto.Nome</h1>
+
+
+<div class="row border border-info p-sm-1">
+    <div class="col-md-12">
+        <div class="form-group row">
+            <label class="col-md-3">Id</label>
+            <div class="col-md-9">
+                <label class="form-control">@Produto.Id</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3">Nome</label>
+            <div class="col-md-9">
+                <label class="form-control">@Produto.Nome</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3">Valor</label>
+            <div class="col-md-9">
+                <label class="form-control">@Produto.Valor</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3">Ativo</label>
+            <div class="col-md-9">
+                <label class="form-control">@Produto.Ativo</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3">Quantidade Vendida</label>
+            <div class="col-md-9">
+                <label class="form-control">@Produto.QuantidadeVendida</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3">Data De Criacao</label>
+            <div class="col-md-9">
+                <label class="form-control">@Produto.DataDeCriacao</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3">Data De Alteração</label>
+            <div class="col-md-9">
+                <label class="form-control">@Produto.DataDeAlteracao</label>
+            </div>
+        </div>
+    </div>
+</div>

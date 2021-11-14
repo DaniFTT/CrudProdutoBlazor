@@ -1,3 +1,5 @@
+using CrudProdutoBlazor.Services;
+using CrudProdutoBlazor.Services.Interfaces;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,8 +19,9 @@ namespace CrudProdutoBlazor
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
 
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-
+            //builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddHttpClient<IProdutoService, ProdutoService>
+                (x => x.BaseAddress = new Uri("https://localhost:44366"));
             await builder.Build().RunAsync();
         }
     }
